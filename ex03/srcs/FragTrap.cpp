@@ -6,11 +6,20 @@
 /*   By: ajeanne <ajeanne@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/28 10:28:53 by ajeanne           #+#    #+#             */
-/*   Updated: 2023/06/28 17:51:52 by ajeanne          ###   ########.fr       */
+/*   Updated: 2023/08/25 14:31:03 by ajeanne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
+
+FragTrap::FragTrap(): ClapTrap("Roger")	{
+	this->_health = 100;
+	this->_stamina = 100;
+	this->_attack = 30;
+	std::cout << "FragTrap " << _name << " is born !" << std::endl;
+	
+	return;
+}
 
 FragTrap::FragTrap(std::string name): ClapTrap(name)	{
 	this->_health = 100;
@@ -21,8 +30,10 @@ FragTrap::FragTrap(std::string name): ClapTrap(name)	{
 	return;
 }
 
-FragTrap::FragTrap(const FragTrap & src): ClapTrap(src.getName(), src.getHealth(), src.getStamina(), src.getAttack())	{
+FragTrap::FragTrap(const FragTrap & src)	{
 	std::cout << "FragTrap copy constructor called." << std::endl;
+	if (this != &src)
+		*this = src;
 
 	return;
 }
@@ -34,11 +45,12 @@ FragTrap::~FragTrap()	{
 }
 
 FragTrap & FragTrap::operator=(const FragTrap & src)	{
-	_name = src.getName();
-	_health = src.getHealth();
-	_stamina = src.getStamina();
-	_attack = src.getAttack();
-
+	if (this != &src)	{
+		_name = src.getName();
+		_health = src.getHealth();
+		_stamina = src.getStamina();
+		_attack = src.getAttack();
+	}
 	return *this;
 }
 

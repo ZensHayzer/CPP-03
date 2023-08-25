@@ -6,7 +6,7 @@
 /*   By: ajeanne <ajeanne@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/28 11:03:23 by ajeanne           #+#    #+#             */
-/*   Updated: 2023/06/28 17:54:06 by ajeanne          ###   ########.fr       */
+/*   Updated: 2023/08/25 14:17:42 by ajeanne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 
 class	DiamondTrap: public ScavTrap, public FragTrap	{
 	public:
+		DiamondTrap();
 		DiamondTrap(std::string name);
 		DiamondTrap(const DiamondTrap & src);
 		~DiamondTrap();

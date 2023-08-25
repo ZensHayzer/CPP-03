@@ -6,11 +6,20 @@
 /*   By: ajeanne <ajeanne@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/28 08:46:16 by ajeanne           #+#    #+#             */
-/*   Updated: 2023/06/28 17:52:48 by ajeanne          ###   ########.fr       */
+/*   Updated: 2023/08/25 14:42:08 by ajeanne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
+
+ScavTrap::ScavTrap(): ClapTrap("Mireille")	{
+	this->_health = 100;
+	this->_stamina = 50;
+	this->_attack = 20;
+	std::cout << "ScavTrap " << _name << " is born !" << std::endl;
+
+	return ;
+}
 
 ScavTrap::ScavTrap(std::string name): ClapTrap(name)	{
 	this->_health = 100;
@@ -21,8 +30,10 @@ ScavTrap::ScavTrap(std::string name): ClapTrap(name)	{
 	return ;
 }
 
-ScavTrap::ScavTrap(const ScavTrap & src): ClapTrap(src.getName(), src.getHealth(), src.getStamina(), src.getAttack())	{
+ScavTrap::ScavTrap(const ScavTrap & src)	{
 	std::cout << "Scavtrap copy constructor called." << std::endl;
+	if (this != &src)
+		*this = src;
 
 	return;
 }
@@ -34,10 +45,12 @@ ScavTrap::~ScavTrap()	{
 }
 
 ScavTrap	&ScavTrap::operator=(const ScavTrap & src)	{
-	_name = src.getName();
-	_health = src.getHealth();
-	_stamina = src.getStamina();
-	_attack = src.getAttack();
+	if (this != &src)	{
+		_name = src.getName();
+		_health = src.getHealth();
+		_stamina = src.getStamina();
+		_attack = src.getAttack();
+	}
 	return (*this);
 }
 

@@ -6,11 +6,17 @@
 /*   By: ajeanne <ajeanne@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/26 14:34:36 by ajeanne           #+#    #+#             */
-/*   Updated: 2023/06/28 17:50:36 by ajeanne          ###   ########.fr       */
+/*   Updated: 2023/08/25 14:20:41 by ajeanne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
+
+ClapTrap::ClapTrap(): _name("Robert"), _health(10), _stamina(10), _attack(0)	{
+	std::cout << "Claptrap " << _name << " is born." << std::endl;
+	
+	return;
+}
 
 ClapTrap::ClapTrap(std::string name): _name(name), _health(10), _stamina(10), _attack(0)	{
 	std::cout << "Claptrap " << name << " is born." << std::endl;
@@ -19,10 +25,8 @@ ClapTrap::ClapTrap(std::string name): _name(name), _health(10), _stamina(10), _a
 }
 
 ClapTrap::ClapTrap(const ClapTrap & src)	{
-	_name = src.getName();
-	_health = src.getHealth();
-	_stamina = src.getStamina();
-	_attack = src.getAttack();
+	if (this != &src)
+		*this = src;
 }
 
 ClapTrap::ClapTrap(std::string name, unsigned int health, unsigned int stamina, unsigned int attack): _name(name), _health(health), _stamina(stamina), _attack(attack)	{
@@ -34,10 +38,12 @@ ClapTrap::~ClapTrap(void)	{
 }
 
 ClapTrap	&ClapTrap::operator=(const ClapTrap & src)	{
-	_name = src.getName();
-	_health = src.getHealth();
-	_stamina = src.getStamina();
-	_attack = src.getAttack();
+	if (this != &src)	{
+		_name = src.getName();
+		_health = src.getHealth();
+		_stamina = src.getStamina();
+		_attack = src.getAttack();
+	}
 	return (*this);
 }
 

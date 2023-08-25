@@ -6,7 +6,7 @@
 /*   By: ajeanne <ajeanne@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/28 08:44:15 by ajeanne           #+#    #+#             */
-/*   Updated: 2023/06/28 17:38:04 by ajeanne          ###   ########.fr       */
+/*   Updated: 2023/08/25 13:43:45 by ajeanne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 class	ScavTrap : virtual public ClapTrap	{
 	
 	public:
+		ScavTrap();
 		ScavTrap(std::string name);
 		ScavTrap(const ScavTrap & src);
 		~ScavTrap();

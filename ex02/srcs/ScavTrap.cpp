@@ -6,11 +6,20 @@
 /*   By: ajeanne <ajeanne@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/28 08:46:16 by ajeanne           #+#    #+#             */
-/*   Updated: 2023/06/28 17:48:01 by ajeanne          ###   ########.fr       */
+/*   Updated: 2023/08/25 14:11:57 by ajeanne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
+
+ScavTrap::ScavTrap(): ClapTrap("Jose")	{
+	this->_health = 100;
+	this->_stamina = 50;
+	this->_attack = 20;
+	std::cout << "ScavTrap " << _name << " is born !" << std::endl;
+
+	return ;
+}
 
 ScavTrap::ScavTrap(std::string name): ClapTrap(name)	{
 	this->_health = 100;

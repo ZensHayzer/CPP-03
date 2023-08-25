@@ -6,7 +6,7 @@
 /*   By: ajeanne <ajeanne@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/26 14:35:06 by ajeanne           #+#    #+#             */
-/*   Updated: 2023/06/28 17:27:29 by ajeanne          ###   ########.fr       */
+/*   Updated: 2023/08/25 13:58:41 by ajeanne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ class ClapTrap	{
 
 	public:
 		
+		ClapTrap();
 		ClapTrap(std::string name);
 		ClapTrap(const ClapTrap & src);
 		ClapTrap(std::string name, unsigned int health, unsigned int stamina, unsigned int attack);

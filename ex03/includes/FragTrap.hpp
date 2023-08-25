@@ -6,7 +6,7 @@
 /*   By: ajeanne <ajeanne@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/28 10:27:31 by ajeanne           #+#    #+#             */
-/*   Updated: 2023/06/28 17:51:15 by ajeanne          ###   ########.fr       */
+/*   Updated: 2023/08/25 14:27:02 by ajeanne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 
 class	FragTrap: virtual public ClapTrap	{
 	public:
+		FragTrap();
 		FragTrap(std::string name);
 		FragTrap(const FragTrap & src);
 		~FragTrap();
